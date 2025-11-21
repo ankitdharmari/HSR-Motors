@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------
+   SOFT MINIMAL PASTEL THEME
+   - Mint / Lavender / Soft blue accents
+--------------------------*/
+
+:root {
+  /* base backgrounds */
+  --bg-100: #fbfdfd;
+  --bg-200: #eef6ff;
+
+  /* cards & text */
+  --card: #ffffff;
+  --muted: #6b7280;
+  --heading: #0f172a;
+
+  /* pastel accents */
+  --mint-50: #ecfffb;
+  --mint-100: #d6fff4;
+  --accent: #7dd3fc;
+  --lavender-50: #f6f2ff;
+  --lavender-100: #c7b8ff;
+  --soft-green: #34d399;
+  --soft-gold: #fbbf24;
+  --soft-red: #fb7185;
+
+  --shadow-card: 0 8px 20px rgba(16,24,40,0.06);
+  --shadow-sm: 0 6px 14px rgba(16,24,40,0.04);
+  --ring: rgba(199,184,255,0.16);
+  --radius-lg: 14px;
+  --radius-md: 10px;
+}
+
+/* Global */
+html, body, #root { height: 100%; }
+
+body {
+  background: linear-gradient(180deg, var(--bg-100), var(--bg-200));
+  color: var(--heading);
+  font-family: "Inter", system-ui;
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------------------
+   HEADER + BRAND
+--------------------------*/
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 28px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.72));
+  border-bottom: 1px solid rgba(15,23,42,0.04);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--heading);
+}
+
+/* ⭐ LOGO APPLIED HERE ⭐ */
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  flex: 0 0 40px;
+  background-image: url('github.com/ankitdharmari/PHOTO/blob/main/Gemini_Generated_Image_q42ft9q42ft9q42f.png?raw=true'); /* your logo */
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: var(--shadow-sm);
+}
+
+.brand-text {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.2px;
+  color: var(--heading);
+}
+
+/* Navigation */
+.top-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.nav-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: .16s, transform .12s;
+}
+
+.nav-item:hover {
+  background: rgba(199,184,255,0.08);
+  color: var(--heading);
+  transform: translateY(-1px);
+}
+
+.nav-item::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-size: 18px;
+  background-repeat: no-repeat;
+}
+
+/* Dashboard icon */
+.nav-item.dashboard::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect x='3' y='3' width='7' height='7' fill='%237dd3fc'/><rect x='14' y='3' width='7' height='7' fill='%237dd3fc'/><rect x='3' y='14' width='7' height='7' fill='%237dd3fc'/><rect x='14' y='14' width='7' height='7' fill='%237dd3fc'/></svg>");
+}
+
+/* Leads icon */
+.nav-item.leads::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='8' r='3' fill='%23343a40'/><path d='M4 20c0-4 4-6 8-6s8 2 8 6' stroke='%23343a40' stroke-width='1.5' fill='none'/></svg>");
+}
+
+/* Manage icon */
+.nav-item.manage::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z' fill='%23343a40'/><path d='M19.4 15a7.9 7.9 0 0 0 .1-2 7.9 7.9 0 0 0-.1-2l2.1-1.6-2-3.4-2.5 1a8 8 0 0 0-1.7-1l-.4-2.7h-4l-.4 2.7a8 8 0 0 0-1.7 1l-2.5-1-2 3.4 2.1 1.6a7.9 7.9 0 0 0 0 4L3.4 16.6l2 3.4 2.5-1a8 8 0 0 0 1.7 1l.4 2.7h4l.4-2.7a8 8 0 0 0 1.7-1l2.5 1 2-3.4-2.1-1.6z' fill='%23343a40'/></svg>");
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+/* List rows */
+.lead-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  background: linear-gradient(180deg, #fbfdff, #f7fbff);
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+  transition: transform .12s;
+}
+
+.lead-row:hover { transform: translateY(-3px); }
+
+/* utilities */
+.bg-pastel-mint { background: var(--mint-50); }
+.bg-pastel-lav { background: var(--lavender-50); }
+.btn-pastel {
+  background: linear-gradient(90deg,var(--mint-100),var(--accent));
+  color: #042022;
+  padding: .45rem .75rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
